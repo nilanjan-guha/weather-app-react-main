@@ -1,0 +1,7 @@
+.App {
+  /* background: #ec6e4c; */
+  /* background-image: linear-gradient(to right, #fffbd5, #b20a2c); */
+  background-image: radial-gradient(circle farthest-side, #fceabb, #f8b500);
+  margin: 0;
+  padding: 15px;
+}
