@@ -16,6 +16,7 @@ class App extends React.Component {
       metric: CELSIUS,
       hourlyForecast: [],
       current: "",
+      dailyForecast: [],
     };
 
     this.handleLocationChange = this.handleLocationChange.bind(this);
@@ -39,6 +40,7 @@ class App extends React.Component {
       current: forecastRes.current,
       metric: CELSIUS,
       hourlyForecast: forecastRes.hourly,
+      dailyForecast: forecastRes.daily,
     });
   }
 
@@ -46,6 +48,7 @@ class App extends React.Component {
     const location = this.state.location;
     const hourlyForecast = this.state.hourlyForecast;
     const current = this.state.current;
+    const dailyForecast = this.state.dailyForecast;
 
     return (
       <div className="App">
@@ -57,8 +60,9 @@ class App extends React.Component {
           />
 
           {current && <CurrentWeather current={current} />}
-          {hourlyForecast.length > 0 && <Forecast forecast={hourlyForecast} />}
+          {hourlyForecast.length > 0 && <Forecast forecast={hourlyForecast} day={dailyForecast} />}
         </header>
+
       </div>
     );
   }
